@@ -17,12 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{user}', 'HomeController@show')->name('home');
+
+Route::get('/p/create', 'recordscontroller@create');
+Route::post('/p', 'RecordsController@store');
+Route::get('/p/{post}', 'RecordsController@show');
+Route::get('/p/{post}/edit', 'RecordsController@edit');
+Route::patch('/p/{post}', 'RecordsController@update');
+
+//Route::get('/p/{post}' , 'recordscontroller@show');

@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm border-bottom border-primary">
             <div class="container d-flex flex-row-reverse">
                 <a class="navbar-brand text-primary" href="{{ url('/') }}" style="font-family:B Tabassom; font-weight:bold; font-size:24px;">
                  <div class="pl-5 border border-primary border-right-0 border-top-0 border-bottom-0"> دفترچه خاطرات آنلاین</div>  
