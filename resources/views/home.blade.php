@@ -17,7 +17,6 @@
                         @foreach ($user->posts as $post)
                             <div class="col-6 pt-4">
                                 <div class="card ">
-                                    
                                     <div class="card-header bg-light border border-light" style="font-weight:bold; font-family: B Mehr;">
                                         <div class="clearfix">
                                             <span class="float-right">{{ $post->title }}</span>
@@ -25,15 +24,16 @@
                                         </div>
                                     </div>
                                     <div class="card-body py-0 px-0">
-                                    <div class="container-fluid pagination pr-0 d-flex flex-row-reverse ">
-                                        <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-success text-light" href="#">نمایش</a></div>
-                                        <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-secondary text-light" href="#">ویرایش</a></div>
-                                        <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-danger text-light" href="#">حذف</a></div>
-                                    </div>
-                                       
+                                        <div class="container-fluid pagination pr-0 d-flex flex-row-reverse ">
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-success text-light" href="#">نمایش</a></div>
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-secondary text-light" href="#">ویرایش</a></div>
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-danger text-light" href="#">حذف</a></div>
+                                        </div>  
                                     </div>
                                 </div>
-                            @endforeach    
+                               
+                            </div>
+                            @endforeach 
                             </div>
                             <!-- <div class="col-6 p-2">
                             <div class="card">
