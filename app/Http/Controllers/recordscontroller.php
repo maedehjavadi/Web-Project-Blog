@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use \App\Post;
+use \App\User;
+use Illuminate\Http\Request;
 
 class recordscontroller extends Controller
 {
@@ -11,26 +12,52 @@ class recordscontroller extends Controller
     {
             $this->middleware('auth');
     }
-
+//sakhte safhe ijade khtere
     public function create()
     {
         return view ('posts.addblog');
     }
+//sabte khatere
     public function store()
     {
+        //dd(request()->all());
         $data = request()->validate([
             'title' => 'required',
             'text' =>  'required',
             ]);
            //bara inke kasi k login shode btoone amale post ro anjam bede
         auth()->user()->posts()->create($data);
-        return redirect('/home/');
+        return redirect('/home/'.auth()->user()->id);
     }
-    public function show($post) {
+
+//bara dokme namayeshe khatere
+    public function show(Post $post) {
+        //dd($post);
        return view('posts.showblog', compact('post'));
-       //dd($post);
     }
-    public function edit($post){
+
+//bara edit va update khatere    
+    public function edit(Post $post){
         return view('posts.editblog', compact('post'));
+    }
+
+    public function update(Post $post){
+        $this->authorize('update' , $post->id);
+        $data = request()->validate([
+            'title' => 'required',
+            'text' =>  'required',
+            ]);
+        //dd($data);
+        $post->update($data);
+        return redirect("/p/{$post->id}");
+
+    }
+
+    //hazfe post
+    public function destroy(Post $id){
+        
+        // $post= Post::find($id);
+        // $post->delete();
+        // return redirect("/home/{$user->id}");
     }
 }

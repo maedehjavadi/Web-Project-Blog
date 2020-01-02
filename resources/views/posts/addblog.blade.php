@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 
-<div class="row justify-content-center mt-3">
+  <div class="row justify-content-center mt-3">
     <div class="col-md-8">
       <form action="/p" enctype=:multipart/form-data method="post">
         @csrf
@@ -25,10 +25,10 @@
         </div>
       </form>
       <div>
-      <button class="btn btn-secondary" style="font-family:B Mehr; font-weight:bold;">بازگشت</button>
+      <button class="btn btn-secondary" style="font-family:B Mehr; font-weight:bold;"><a href="#">بازگشت</a></button>
       </div>
     </div>
-</div>
+  </div>
 
 </div>
 @endsection

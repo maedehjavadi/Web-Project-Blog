@@ -27,11 +27,15 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/{user}', 'HomeController@show')->name('home');
-
+//safhe baraye sabte khatere jadid
 Route::get('/p/create', 'recordscontroller@create');
+//bara dokme sabhe sabtekhatere
 Route::post('/p', 'RecordsController@store');
+//safhe namayeshe khatere
 Route::get('/p/{post}', 'RecordsController@show');
+//safhe edit khatere
 Route::get('/p/{post}/edit', 'RecordsController@edit');
 Route::patch('/p/{post}', 'RecordsController@update');
 
 //Route::get('/p/{post}' , 'recordscontroller@show');
+Route::delete('/home/{user}', 'RecordsController@destroy');

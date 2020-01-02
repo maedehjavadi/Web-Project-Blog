@@ -7,14 +7,14 @@
       <form action="/p/{{ $post->id}}" enctype=:multipart/form-data method="post">
         @csrf
         @method('PATCH')
-        <input id="text" type="text" class="form-control form-control-sm mb-3 text-right @error('title') is-invalid @enderror" name="title" placeholder="عنوان خاطره" style="font-family:B Mehr; font-weight:bold;"  value="{{ old('title') }}"  autocomplete="title" autofocus>
+        <input id="text" type="text" class="form-control form-control-sm mb-3 text-right @error('title') is-invalid @enderror" name="title" placeholder="عنوان خاطره" style="font-family:B Mehr; font-weight:bold;"  value="{{ old('title') ?? $post->title }}"  autocomplete="title" autofocus>
         @error('name')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
           </span>
         @enderror
         
-        <input id="text"   type="text" class="form-control inp text-right @error('text') is-invalid @enderror" name="text" placeholder="متن خاطره" style="font-family:B Mehr;font-weight:bold;" value="{{ old('text') }}"  autocomplete="text" autofocus>
+        <input id="text"   type="text" class="form-control inp text-right @error('text') is-invalid @enderror" name="text" placeholder="متن خاطره" style="font-family:B Mehr;font-weight:bold;" value="{{ old('text') ?? $post->text }}"  autocomplete="text" autofocus>
         @error('name')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
