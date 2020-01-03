@@ -16,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+    // protected $policies = [
+    //     Post::class => PosdtPolicy::class,
+    // ];
 
     /**
      * Bootstrap any application services.
