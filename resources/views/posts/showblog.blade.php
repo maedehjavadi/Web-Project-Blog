@@ -11,14 +11,14 @@
                     {{$post->title }}
                 </p>
            </div> 
-            <div class="text-right" style="font-weight:bold; font-family: B Tabassom; height:325px;">
-                <p>
+            <div class="border border-primary text-right mb-3" style="font-weight:bold; font-family: B Tabassom; height:300px;">
+                <p class="p-4">
                     {{$post->text }}
                 </p>
             </div>
 
             <div>
-                <button class="btn btn-secondary" style="font-family:B Mehr; font-weight:bold;"><a href="#">بازگشت</a></button>
+                <button class="btn btn-outline-secondary" style="font-family:B Mehr; font-weight:bold;"><a href="#">بازگشت</a></button>
             </div>
         </div>
     </div>
