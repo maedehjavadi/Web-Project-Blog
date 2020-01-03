@@ -26,9 +26,20 @@
                                     </div>
                                     <div class="card-body py-0 px-0">
                                         <div class="container-fluid pagination pr-0 d-flex flex-row-reverse ">
-                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-success text-light" href="/p/{{ $post->id }}">نمایش</a></div>
-                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-secondary text-light" href="/p/{{$post->id}}/edit">ویرایش</a></div>
-                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;"><a class="page-link bg-danger text-light" href="#">حذف</a></div>
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;">
+                                                <a class="page-link bg-success text-light" href="/p/{{ $post->id }}">نمایش</a>
+                                            </div>
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;">
+                                                <a class="page-link bg-secondary text-light" href="/p/{{$post->id}}/edit">ویرایش</a>
+                                            </div>
+                                            <div class="col-4 page-item px-0 text-center" style="font-weight:bold; font-family: B Mehr;">
+                                                <form action="/p/{{ $post->id }}" enctype=:multipart/form-data method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="page-link bg-danger text-light w-100" type="submit">حذف</button>  
+                                                </form> 
+                                                <!-- <a class="page-link bg-danger text-light" href="#">حذف</a> -->
+                                            </div>
                                         </div>  
                                     </div>
                                 </div>

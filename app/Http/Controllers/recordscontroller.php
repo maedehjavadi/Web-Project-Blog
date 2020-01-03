@@ -6,7 +6,7 @@ use \App\Post;
 use \App\User;
 use Illuminate\Http\Request;
 
-class recordscontroller extends Controller
+class RecordsController extends Controller
 {
     public function __construct()
     {
@@ -38,26 +38,33 @@ class recordscontroller extends Controller
 
 //bara edit va update khatere    
     public function edit(Post $post){
+        
+        $this->authorize('update' , $post);
         return view('posts.editblog', compact('post'));
     }
 
     public function update(Post $post){
-        $this->authorize('update' , $post->id);
+        $this->authorize('update' , $post);
         $data = request()->validate([
             'title' => 'required',
             'text' =>  'required',
             ]);
         //dd($data);
+        
         $post->update($data);
         return redirect("/p/{$post->id}");
 
     }
 
     //hazfe post
-    public function destroy(Post $id){
+    public function destroy($id){
+        //dd($id);
         
-        // $post= Post::find($id);
-        // $post->delete();
-        // return redirect("/home/{$user->id}");
+        $post= Post::findOrFail($id);
+        $post->delete();
+        return redirect('/home/'.auth()->user()->id);
     }
+
+    
+
 }
