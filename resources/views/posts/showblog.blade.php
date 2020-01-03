@@ -18,7 +18,7 @@
             </div>
 
             <div>
-                <button class="btn btn-outline-secondary" style="font-family:B Mehr; font-weight:bold;"><a href="#">بازگشت</a></button>
+                <button class="btn btn-outline-secondary" style="font-family:B Mehr; font-weight:bold;"><a href="/p/{$user->id}">بازگشت</a></button>
             </div>
         </div>
     </div>
