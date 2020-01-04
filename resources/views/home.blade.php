@@ -21,7 +21,7 @@
                                     <div class="card-header bg-light border border-light" style="font-weight:bold; font-family: B Mehr;">
                                         <div class="clearfix">
                                             <span class="float-right">{{ $post->title }}</span>
-                                            <span class="float-left">{{ $post->updated_at}}</span>
+                                            <span class="float-left">{{ \Morilog\Jalali\Jalalian::forge($post->updated_at)->format('%B %d، %Y')}}</span>
                                         </div>
                                     </div>
                                     <div class="card-body py-0 px-0">

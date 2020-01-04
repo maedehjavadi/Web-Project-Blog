@@ -40,3 +40,4 @@ Route::post('/p', 'RecordsController@store');
 //Route::get('/p/{post}' , 'recordscontroller@show');
 
 Route::delete('/p/{post}', 'RecordsController@destroy');
+

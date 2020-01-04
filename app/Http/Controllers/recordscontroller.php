@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use \App\Post;
 use \App\User;
 use Illuminate\Http\Request;
+use Morilog\Jalali\Jalalian;
 
 class RecordsController extends Controller
 {
@@ -25,8 +26,8 @@ class RecordsController extends Controller
             'title' => 'required',
             'text' =>  'required',
             ]);
-           //bara inke kasi k login shode btoone amale post ro anjam bede
-        auth()->user()->posts()->create($data);
+            //bara inke kasi k login shode btoone amale post ro anjam bede
+            auth()->user()->posts()->create($data);
         return redirect('/home/'.auth()->user()->id);
     }
 
@@ -64,7 +65,4 @@ class RecordsController extends Controller
         $post->delete();
         return redirect('/home/'.auth()->user()->id);
     }
-
-    
-
 }
